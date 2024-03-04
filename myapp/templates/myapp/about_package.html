@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% include "includes/navbar_pages.html" %}
+<div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="{{package.image.url}}" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">{{package.country}}</h6>
+<!--                    <h1 class="mb-4">{{model.title}} <span class="text-primary">xush kelibsiz!</span></h1>-->
+                    <p class="mb-4">{{package.content}}</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <p><i class="fa-solid fa-plane text-primary me-2"></i><a href="{% url 'show_cat' package.cat.id %}">{{package.cat.name}}</a></p>
+                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>{{package.country}}</p>
+                        <p><i class="fa fa-calendar-alt text-primary me-2"></i>{{package.day}} kun</p>
+                        <p><i class="fa fa-user text-primary me-2"></i>{{package.count}} ta joy bor</p>
+
+
+
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="{% url 'contact' %}">Bizga xabar yuborish</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

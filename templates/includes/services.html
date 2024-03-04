@@ -1,0 +1,21 @@
+<div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Xizmatlar</h6>
+                <h1 class="mb-5">Bizning Reyslar</h1>
+            </div>
+            <div class="row g-4">
+                {% for cat in categories %}
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <a href="{% url 'show_cat' cat.pk %}"><div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <img src="{{cat.image.url}}">
+                            <h5>{{cat.name}}</h5>
+                            <p>{{cat.content}}</p>
+                        </div>
+                    </div></a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
